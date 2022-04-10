@@ -1,9 +1,20 @@
-# Compass
+# Aircraft Compass
 
-A simple HTML5 [compass web app](https://lamplightdev.github.io/compass) that's offline capable.
+A SocketIO based web app to automatically move a compass needle in the direction of incoming
+aircraft, based off of data obtained from a software defined radio (SDR) tuned to the ADS-B
+radio band used by commercial aircraft transponders. 
 
-Makes use of the HTML5 Location, Device Orientation, Screen Orientation, Screen Lock and Fullscreen APIs.
+Built in (less than) 24 hours at Bitcamp 2022. 
 
-## Browser support
+Special thanks to Dr. Marc Lichtman for his great workshop on SDRs and for letting me borrow equipment.
 
-The app should work on any modern standards compliant browser that implements the above APIs. This is currently Chrome for Android, Opera for Android, Firefox for Android, IE for Windows Phone and Safari for iOS (and therefore all browsers on iOS). Only Chrome on Android and Opera on Android support the latest version of the screen lock API and so screen lock is only available on these browsers. Webkit based browsers - iOS Safari-based browsers, default Android Browser etc. - do not implement the screen orientation API so will show incorrect results if the device is turned from portrait.
+Completed: 
+- Parsed ADS-B messages on 1.09 GHz radio band using the PlutoSDR and GNURadio. 
+- Passed ADS-B messages through to Python Socket.IO server
+- Obtained geolocation and heading data from individual users connected to the server
+- Calculated (inaccurate) bearing angle between the two geolocations. 
+
+TODO: 
+- Actually move needle on web app
+- Fix issue with incorrect bearing calculations
+- Attach to a Raspberry Pi micro servo because that was the original plan anyway
