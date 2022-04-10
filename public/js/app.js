@@ -2,7 +2,7 @@
   "use strict";
 
   //set to true for debugging output
-  var debug = false;
+  var debug = true;
 
   // our current position
   var positionCurrent = {
@@ -11,7 +11,7 @@
     hng: null
   };
 
-
+  var socket = io.connect();
   // the outer part of the compass that rotates
   var rose = document.getElementById("rose");
 
@@ -54,6 +54,9 @@
   // the orientation of the device on app load
   var defaultOrientation;
 
+  // socket.on("updateFlight", (arg) => {
+  //   console.log(arg); // world
+  // });
 
   // browser agnostic orientation
   function getBrowserOrientation() {
@@ -305,6 +308,7 @@
 
     positionLat.textContent = decimalToSexagesimal(positionCurrent.lat, "lat");
     positionLng.textContent = decimalToSexagesimal(positionCurrent.lng, "lng");
+    socket.emit('updateGeolocation', {'latitude': positionCurrent.lat, 'longitude': positionCurrent.lng})
   }
 
   function locationUpdateFail(error) {

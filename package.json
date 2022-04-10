@@ -1,0 +1,17 @@
+{
+    "name": "AircraftCompass",
+    "version": "1.0.0",
+    "description": "Morse Code chat application",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "javathunderman",
+    "license": "GPL v3",
+    "dependencies": {
+      "express": "latest",
+      "socket.io": "latest",
+      "zmq": "latest"
+    }
+  }
+  
