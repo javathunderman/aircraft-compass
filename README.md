@@ -18,3 +18,7 @@ TODO:
 - Actually move needle on web app
 - Fix issue with incorrect bearing calculations
 - Attach to a Raspberry Pi micro servo because that was the original plan anyway
+
+Web app credit: https://github.com/lamplightdev/compass
+GNURadio tutorial/ADS-B parsing: https://github.com/777arc/498x
+Some other SocketIO crap I copied from a previous project: https://github.com/javathunderman/MorseCodeChat
