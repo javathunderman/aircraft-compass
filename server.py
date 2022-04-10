@@ -10,7 +10,7 @@ import geopy.distance
 app = Flask(__name__, static_url_path="", static_folder="public")
 app.config["SECRET_KEY"] = "secret!"
 socketio = SocketIO(app)
-global_pos = {'a0d6a8': {'latitude': 39.001952364038424, 'longitude': -76.92266280682385}}
+global_pos = {'a0d6a8': {'latitude': 39.001952364038424, 'longitude': -76.92266280682385}} # Must fix
 users = {}
 
 def zmq_thread():
@@ -41,7 +41,7 @@ def zmq_thread():
         for user in users:
             nearestFlightToUser = users[user]['nearestFlight']
             print(nearestFlightToUser)
-            bearing = 33
+            bearing = 33 # Must fix
             print(bearing)
             socketio.emit("updateFlight", {'bearing': bearing})
         

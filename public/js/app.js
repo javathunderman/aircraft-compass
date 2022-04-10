@@ -54,9 +54,9 @@
   // the orientation of the device on app load
   var defaultOrientation;
 
-  // socket.on("updateFlight", (arg) => {
-  //   console.log(arg); // world
-  // });
+  socket.on("updateFlight", (arg) => {
+    console.log(arg);
+  });
 
   // browser agnostic orientation
   function getBrowserOrientation() {
